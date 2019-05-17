@@ -28,13 +28,13 @@ while cap.isOpened():
     frameMidd = frameTail
     frameTail = frame
     if currentframeindex % 2 == 0 and currentframeindex > 0:
-        firstAlpha = 0.8
+        firstAlpha = 0.5
         newFrame = None
         if frameHead.any() :
             newFrame = cv2.addWeighted(frameHead, firstAlpha, frameTail,1-firstAlpha,0)
         else :
             newFrame = frameTail
-        firstAlpha = 0.3
+        firstAlpha = 0.7
         newFrame = cv2.addWeighted(frameMidd,firstAlpha,newFrame,1-firstAlpha,0)
         # create a new frame with 3 old frames
 
